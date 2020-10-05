@@ -13,21 +13,11 @@ import Header from './Header';
 // import Sidebar from './Sidebar';
 import Footer from './Footer';
 import PageRouter from './PageRouter';
-// import post1 from './blog-post.1.md';
-// import post2 from './blog-post.2.md';
-// import post3 from './blog-post.3.md';
 
 const sections = [
     { title: '회사소개', url: '/company' },
     { title: '제품소개', url: '/product' },
-    //{ title: '공정과정', url: '/process' },
     { title: '오시는길', url: '/contactus' },
-    // { title: 'Politics', url: '#' },
-    // { title: 'Opinion', url: '#' },
-    // { title: 'Science', url: '#' },
-    // { title: 'Health', url: '#' },
-    // { title: 'Style', url: '#' },
-    // { title: 'Travel', url: '#' }
 ];
 
 export default function OutsideFrame() {

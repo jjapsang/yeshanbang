@@ -23,9 +23,16 @@ const useStyles = makeStyles((theme) => ({
         overflowX: 'auto',
     },
     toolbarLink: {
+        textDecoration: "none",
+        fontSize: "15px",
         padding: theme.spacing(1),
         flexShrink: 0,
     },
+    title: {
+        textDecoration: "none",
+        color: "black",
+        fontWeight: "bolder"
+    }
 }));
 
 export default function Header(props) {
@@ -45,7 +52,7 @@ export default function Header(props) {
                     noWrap
                     className={classes.toolbarTitle}
                 >
-                    <MLink href="/" style={{textDecoration: "none", color: "black"}}>
+                    <MLink href="/" className={classes.title} style={{}}>
                         {title}
                     </MLink>
                 </Typography>
@@ -59,18 +66,10 @@ export default function Header(props) {
             </Toolbar>
             <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
             {
-                sections.map((section) => (
-                    <Link to={section.url} className={classes.toolbarLink}>{section.title}</Link>
-                    // <Link
-                    //     color="inherit"
-                    //     noWrap
-                    //     key={section.title}
-                    //     variant="body2"
-                    //     href={section.url}
-                    //     className={classes.toolbarLink}
-                    // >
-                    //     {section.title}
-                    // </Link>
+                sections.map((section, index) => (
+                    <Link key={index} to={section.url} className={classes.toolbarLink}>
+                        {section.title}
+                    </Link>
                 ))
             }
             </Toolbar>

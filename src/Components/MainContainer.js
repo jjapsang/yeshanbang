@@ -11,8 +11,6 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 
-import post1 from './blog-post.1.md';
-
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
         marginTop: theme.spacing(3),
@@ -23,19 +21,20 @@ export default function MainContainer(props) {
     const classes = useStyles();
 
     const mainFeaturedPost = {
-        title: 'Title of a longer featured blog post',
-        description: "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-        image: 'https://source.unsplash.com/random',
+        title: 'Yes, 한방',
+        description: "산행을 통해 얻는 자연산 버섯, 산삼, 산약초..",
+        description_detail: "그리고 건강",
+        image: '/mountain.jpg',
         imgText: 'main image description',
-        linkText: 'Continue reading…'
+        linkText: ''
     };
 
     const featuredPosts = [
         {
-            title: 'Featured post',
-            date: 'Nov 12',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-            image: 'https://source.unsplash.com/random',
+            title: '산삼',
+            date: '2019.05.14',
+            description: '강원도 자연산 산삼',
+            image: '/sansam.jpeg',
             imageText: 'Image Text',
         },
         {
@@ -48,7 +47,7 @@ export default function MainContainer(props) {
     ];
 
     // const posts = [post1, post2, post3];
-    const posts = [ post1 ];
+    const posts = [];
 
     const sidebar = {
         title: 'About',
