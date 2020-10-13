@@ -10,11 +10,16 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
         marginTop: theme.spacing(3),
-    }
+    },
+    cardGrid: {
+        paddingTop: theme.spacing(6),
+        paddingBottom: theme.spacing(6),
+    },
 }));
 
 export default function MainContainer(props) {
@@ -35,6 +40,13 @@ export default function MainContainer(props) {
             date: '2019.05.14',
             description: '강원도 자연산 산삼',
             image: '/sansam.jpeg',
+            imageText: 'Image Text',
+        },
+        {
+            title: 'Post title',
+            date: 'Nov 11',
+            description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
+            image: 'https://source.unsplash.com/random',
             imageText: 'Image Text',
         },
         {
@@ -75,15 +87,17 @@ export default function MainContainer(props) {
     return(
         <Fragment>
             <MainFeaturedPost post={mainFeaturedPost} />
-            <Grid container spacing={4}>
-            {
-                featuredPosts.map((post) => {
-                    return (
-                        <FeaturedPost key={post.title} post={post} />
-                    )
-                })
-            }
-            </Grid>
+            <Container className={classes.cardGrid} maxWidth="lg">
+                <Grid container spacing={10}>
+                    {
+                        featuredPosts.map((post) => {
+                            return (
+                                <FeaturedPost key={post.title} post={post} />
+                            )
+                        })
+                    }
+                </Grid>
+            </Container>
             <Grid container spacing={5} className={classes.mainGrid}>
                 <Main title="From the firehose" posts={posts} />
                 <Sidebar
