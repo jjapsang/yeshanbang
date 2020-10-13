@@ -26,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
     cardContent: {
         flexGrow: 1,
     },
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6),
-    },
 }));
 
 export default function FeaturedPost(props) {
@@ -52,7 +48,6 @@ export default function FeaturedPost(props) {
                         {post.description}
                     </Typography>
                 </CardContent>
-
             </Card>
         </Grid>
     );

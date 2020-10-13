@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(3),
     },
     cardGrid: {
-        paddingTop: theme.spacing(6),
-        paddingBottom: theme.spacing(6),
+        paddingTop: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
     },
 }));
 
@@ -86,9 +86,10 @@ export default function MainContainer(props) {
 
     return(
         <Fragment>
-            <MainFeaturedPost post={mainFeaturedPost} />
+
             <Container className={classes.cardGrid} maxWidth="lg">
-                <Grid container spacing={10}>
+                <MainFeaturedPost post={mainFeaturedPost} />
+                <Grid container spacing={6}>
                     {
                         featuredPosts.map((post) => {
                             return (
@@ -97,16 +98,17 @@ export default function MainContainer(props) {
                         })
                     }
                 </Grid>
+                <Grid container spacing={5} className={classes.mainGrid}>
+                    <Main title="From the firehose" posts={posts} />
+                    <Sidebar
+                        title={sidebar.title}
+                        description={sidebar.description}
+                        archives={sidebar.archives}
+                        social={sidebar.social}
+                    />
+                </Grid>
             </Container>
-            <Grid container spacing={5} className={classes.mainGrid}>
-                <Main title="From the firehose" posts={posts} />
-                <Sidebar
-                    title={sidebar.title}
-                    description={sidebar.description}
-                    archives={sidebar.archives}
-                    social={sidebar.social}
-                />
-            </Grid>
+
         </Fragment>
     )
 }
